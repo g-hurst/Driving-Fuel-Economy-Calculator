@@ -24,6 +24,7 @@ int main () {
     //asks the user if they would like to use the program
     cout << "Would you like to use the fuel economy calculator? [y/n]: ";
     cin >> response;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     if (response == 'y' || response == 'Y'){
         runProgram = true;
     }
@@ -33,10 +34,10 @@ int main () {
         //gets user first name
         cout << setw(30) << left << "Enter your first name:";
         cin >> firstName;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         //gets user middle initial
         cout << setw(30) << left << "Enter your middle initial:";
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cin.get(middleInitial);
         if(middleInitial == '\n'){
             middleInitial = '\0';
@@ -46,6 +47,7 @@ int main () {
         //gets user last name
         cout << setw(30) << left << "Enter your last name:";
         cin >> lastName;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         //combines full name
         fullName = firstName + " " + middleInitial + " " + lastName;
@@ -56,6 +58,7 @@ int main () {
             //prompts if the user would like to calculate another driving fuel economy
             cout << "Would you like to enter data in metric or US customary [m/c]: ";
             cin >> response;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             if (response == 'M' || response == 'm'){
                 metricInput(fullName);
                 acceptableInput = true;
@@ -72,6 +75,7 @@ int main () {
         //prompts if the user would like to calculate another driving fuel economy
         cout << "Would you like to use the fuel economy calculator again? [y/n]: ";
         cin >> response;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         if (response == 'y' || response == 'Y'){
             runProgram = true;
         }
@@ -97,6 +101,7 @@ void coustomaryInput(string name){
         //prompts the user to enter miles driven and ensures correct datatype is entered
         cout << setw(30) << left << "Enter miles driven:" ;
         cin >> milesDriven;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         datatype = false;
         while(!datatype){
             if(!cin){
@@ -113,6 +118,7 @@ void coustomaryInput(string name){
         //prompts the user to enter the gallons used and again ensures the correct datatype is entered
         cout << setw(30) << left << "Enter gallons of gas used:" ;
         cin >> gallonsUsed;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         datatype = false;
         while(!datatype){
             if(!cin){
@@ -163,6 +169,7 @@ void metricInput(string name){
         //prompts the user to enter kilometers driven and ensures correct datatype is entered
         cout << setw(30) << left << "Enter kilometers driven:" ;
         cin >> kilometersDriven;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         datatype = false;
         while(!datatype){
             if(!cin){
@@ -179,6 +186,7 @@ void metricInput(string name){
         //prompts the user to enter the liters used and again ensures the correct datatype is entered
         cout << setw(30) << left << "Enter liters of gas used:" ;
         cin >> litersUsed;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         datatype = false;
         while(!datatype){
             if(!cin){
