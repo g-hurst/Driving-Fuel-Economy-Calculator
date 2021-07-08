@@ -1,7 +1,7 @@
 /*
 Driving fuel economy calculator
 Garrett Hurst
-6/23/2021
+7/8/2021
 This code will calculate both metric and us customary information about a user's driving fuel economey.
 */
 
